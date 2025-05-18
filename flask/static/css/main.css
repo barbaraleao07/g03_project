@@ -1,0 +1,50 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Sat May 17 12:56:21 2025
+
+@author: barba
+"""
+
+/* static/css/main.css */
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f5f6fa;
+  margin: 0;
+  padding: 0;
+}
+
+nav {
+  background-color: #2f3640;
+  padding: 10px 20px;
+}
+
+ul.menu {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 10px;
+}
+
+ul.menu li {
+  display: inline;
+}
+
+a.button {
+  text-decoration: none;
+  color: white;
+  background-color: #40739e;
+  padding: 8px 12px;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+a.button:hover {
+  background-color: #2980b9;
+}
+
+a.button[style] {
+  background-color: transparent;
+  padding: 8px 0;
+}
