@@ -3,10 +3,10 @@
 Created on Sat May 17 12:56:21 2025
 
 @author: barba
-"""
+*/
 
 /* static/css/main.css */
-
+"""
 body {
   font-family: Arial, sans-serif;
   background-color: #f5f6fa;
@@ -47,4 +47,159 @@ a.button:hover {
 a.button[style] {
   background-color: transparent;
   padding: 8px 0;
+}
+
+.home-container {
+  max-width: 600px;
+  margin: 80px auto;
+  padding: 40px 30px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  text-align: center;
+  color: #2f3640;
+}
+
+.home-container h1 {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin-bottom: 15px;
+}
+
+.home-container p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+  color: #555;
+}
+
+.home-banner {
+  display: block;         
+  max-width: 80%;           
+  height: auto;             
+  margin: 20px auto;        
+  border-radius: 10px;     
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* --- Login page styles --- */
+.login-container {
+  max-width: 350px;
+  margin: 60px auto;
+  padding: 30px 25px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+  color: #2f3640;
+  font-family: Arial, sans-serif;
+}
+
+.login-container h1 {
+  margin-bottom: 25px;
+  font-weight: 700;
+  font-size: 2rem;
+  text-align: center;
+}
+
+.login-container form label {
+  display: block;
+  margin-top: 15px;
+  font-weight: 600;
+}
+
+.login-container form input[type="text"],
+.login-container form input[type="password"] {
+  width: 100%;
+  padding: 10px 12px;
+  margin-top: 6px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease;
+}
+
+.login-container form input[type="text"]:focus,
+.login-container form input[type="password"]:focus {
+  border-color: #40739e;
+  outline: none;
+}
+
+.login-container .button1 {
+  width: 100%;
+  margin-top: 25px;
+  background-color: #40739e;
+  border: none;
+  padding: 12px 0;
+  color: white;
+  font-weight: 700;
+  font-size: 1.1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.login-container .button1:hover {
+  background-color: #2980b9;
+}
+
+.login-error {
+  color: #e74c3c;
+  margin-top: 15px;
+  text-align: center;
+  font-weight: 600;
+}
+
+.welcome-banner {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
+}
+
+.slogan {
+  font-style: italic;
+  color: #555;
+  margin-bottom: 30px;
+  font-size: 1.1rem;
+}
+
+.features-icons {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  margin-bottom: 30px;
+}
+
+.feature-link {
+  text-decoration: none;
+  color: #2f3640;
+  font-weight: 600;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+.feature-link i {
+  font-size: 2.5rem;
+  margin-bottom: 8px;
+  color: #40739e;
+  transition: color 0.3s ease;
+}
+
+.feature-link:hover,
+.feature-link:focus {
+  color: #2980b9;
+}
+
+.feature-link:hover i,
+.feature-link:focus i {
+  color: #1c5980;
+}
+
+.center-image {
+  display: block;
+  margin: 20px auto;
 }

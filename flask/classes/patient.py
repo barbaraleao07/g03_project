@@ -11,13 +11,13 @@ class Patient(Gclass):
     pos = 0
     sortkey = ''
 
-    att = ['_patient_id', '_patient_name', '_age', '_diagnosis', '_condition', '_ward_id', '_user']
+    att = ['_patient_id', '_patient_name', '_age', '_diagnosis', '_condition', '_ward_id', '_user', '_foto']
 
     header = 'Patient'
 
-    des = ['Patient Id', 'Patient Name', 'Age', 'Diagnosis', 'Condition', 'Ward Id', 'User']
+    des = ['Patient Id', 'Patient Name', 'Age', 'Diagnosis', 'Condition', 'Ward Id', 'User', 'Foto']
 
-    def __init__(self, patient_id, patient_name, age, diagnosis, condition, ward_id, user):
+    def __init__(self, patient_id, patient_name, age, diagnosis, condition, ward_id, user, foto):
         super().__init__()
         patient_id = Patient.get_id(patient_id)
         self._id = patient_id
@@ -27,6 +27,7 @@ class Patient(Gclass):
         self._condition = str(condition)
         self._ward_id = int(ward_id)
         self._user = user
+        self._foto = foto
 
         Patient.obj[patient_id] = self
         Patient.lst.append(patient_id)
@@ -82,6 +83,14 @@ class Patient(Gclass):
     @property
     def user(self):
         return self._user
+    
+    @property 
+    def foto (self):
+        return self._foto
+    
+    @foto.setter 
+    def foto(self, foto):
+        self._foto = foto
         
     @classmethod
     def insert(cls, id):
@@ -140,7 +149,7 @@ class Patient(Gclass):
         return base
     
     def save_to_db(self,cursor):
-        insert_condition = """INSERT INTO Patient(patient_id, patient_name, age, diagnosis, condition, ward_id, user) VALUES (?, ?, ?, ?, ?, ?, ?);"""
+        insert_condition = """INSERT INTO Patient(patient_id, patient_name, age, diagnosis, condition, ward_id, user, foto) VALUES (?, ?, ?, ?, ?, ?, ?, ?);"""
 
-        data_tuple = (self.id, self.patient_name, self.age, self.diagnosis, self.condition, self.ward_id, self.user)
+        data_tuple = (self.id, self.patient_name, self.age, self.diagnosis, self.condition, self.ward_id, self.user, self.foto)
         cursor.execute(insert_condition, data_tuple)

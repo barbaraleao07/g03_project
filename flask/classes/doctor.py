@@ -53,6 +53,7 @@ class Doctor(Gclass):
     @property
     def user(self):
         return self._user
+    
 
     def save_to_db(self,cursor):
         insert_condition = """INSERT INTO Doctor(doctor_id, doctor_name, specialization, user) VALUES (?, ?, ?, ?);"""

@@ -4,7 +4,7 @@ save_data_on_exit = True
 save_history = True
 save_non_project_files = False
 project_type = 'empty-project-type'
-recent_files = ['classes\\patient.py', 'classes\\doctor.py', 'app.py', 'classes\\ward.py', 'classes\\userlogin.py', 'classes\\appointment.py', 'templates\\index.html', 'templates\\base.html', 'templates\\gform.html', 'subs\\apps_gform.py', 'templates\\userlogin.html', 'templates\\login.html', 'templates\\patient.html', 'templates\\subform.html', 'classes\\gclass.py', 'init_users.py', 'static\\css\\main.css', 'subs\\apps_userlogin.py', 'subs\\apps_patient.py', 'subs\\apps_subform.py', 'datafile.py']
+recent_files = ['classes\\patient.py', 'classes\\doctor.py', 'app.py', 'classes\\ward.py', 'classes\\userlogin.py', 'classes\\appointment.py', 'templates\\index.html', 'templates\\base.html', 'templates\\gform.html', 'subs\\apps_gform.py', 'templates\\userlogin.html', 'templates\\login.html', 'templates\\patient.html', 'templates\\subform.html', 'classes\\gclass.py', 'init_users.py', 'static\\css\\main.css', 'subs\\apps_userlogin.py', 'subs\\apps_patient.py', 'subs\\apps_subform.py', 'datafile.py', 'subs\\apps_plot.py', 'templates\\plot.html', 'subs\\subs_patientFoto.py']
 
 [main]
 version = 0.2.0

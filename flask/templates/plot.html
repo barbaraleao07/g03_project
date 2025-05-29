@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+{% endblock %}
+
+{% block content %}
+<style>
+    .plot-container {
+        max-width: 700px;
+        margin: 40px auto;
+        padding: 20px;
+        background-color: #f9f9f9;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        text-align: center;
+    }
+    .plot-container h2 {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        color: #333;
+        margin-bottom: 20px;
+    }
+    .plot-container img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 4px;
+        border: 1px solid #ccc;
+    }
+</style>
+
+<div class="plot-container">
+    <h2>Pacientes por Condição Médica</h2>
+    <img src="data:image/png;base64,{{ image }}" mimetype="image/png" alt="Pacientes por Condição Médica">
+</div>
+
+<div class="plot-container">
+    <h2>Pacientes por Enfermaria (Ward ID)</h2>
+    <img src="data:image/png;base64,{{ image2 }}" mimetype="image/png" alt="Pacientes por Enfermaria">
+</div>
+{% endblock %}

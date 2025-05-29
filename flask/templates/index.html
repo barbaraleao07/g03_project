@@ -1,14 +1,46 @@
 {% extends 'base.html' %}
 
 {% block title %}
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
 {% endblock %}
 
 {% block content %}
+<div class="home-container">
+    <h1>Bem-vindo ao Flask Demo PCII!</h1>
+    <p>Um portal para a gestão de pacientes, médicos e muito mais.</p>
+    <img src="{{ url_for('static', filename='images/welcome_banner.png') }}" alt="Bem-vindo" class="home-banner">
 
-    <div class="dados">
-        <br><br>
-            <h1>Flask demo PCII</h1>
+    {% if ulogin != None %}
+    <div class="icon-links">
+        <a href="/gform/Patient">
+            <i class="fas fa-user-injured"></i>
+            <span>Pacientes</span>
+        </a>
+        <a href="/gform/Doctor">
+            <i class="fas fa-user-md"></i>
+            <span>Médicos</span>
+        </a>
+        <a href="/gform/Appointment">
+            <i class="fas fa-calendar-check"></i>
+            <span>Consultas</span>
+        </a>
     </div>
-    
+    {% else %}
+    <div class="icon-links">
+        <div>
+            <i class="fas fa-user-injured"></i>
+            <span>Pacientes</span>
+        </div>
+        <div>
+            <i class="fas fa-user-md"></i>
+            <span>Médicos</span>
+        </div>
+        <div>
+            <i class="fas fa-calendar-check"></i>
+            <span>Consultas</span>
+        </div>
+    </div>
+    {% endif %}
+</div>
 {% endblock %}
+
