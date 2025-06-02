@@ -5,14 +5,7 @@ Created on Mon May 26 15:30:20 2025
 @author: barba
 """
 
-# -*- coding: utf-8 -*-
-"""
-@author: António Brito / Carlos Bragança
-(2024)
-#objective: subs_gform.py
-
-"""""
-from flask import Flask, render_template, request, session
+from flask import Flask, render_template, request, session, url_for
 from werkzeug.utils import secure_filename
 import os
 
@@ -23,7 +16,7 @@ img = ""
 
 
 
-def Fotoform(app,cname=''):
+def patientFotoform(app,cname=''):
     global img
     global prev_option
     ulogin=session.get("user")
@@ -109,16 +102,15 @@ def Fotoform(app,cname=''):
             obj = dict()
             for att in cl.att:
                 obj[att] = ""
-            img = os.path.join(app.config['UPLOAD'], "None.png")    
+            img = url_for('static', filename='images/None.png')
         else:
-            
-            if obj._foto == "" or obj._foto == "None":
-                img = os.path.join(app.config['UPLOAD'], "None.png") 
+            if not hasattr(obj, '_foto') or obj._foto in ("", "None"):
+                img = url_for('static', filename='images/None.png')
             else:
-                img = os.path.join(app.config['UPLOAD'], obj._foto)
-                
-                
-            print("obj._foto>>>>>>",obj._foto)
+                img = url_for('static', filename=f'images/{obj._foto}')
+        
+            print("obj._foto>>>>>>", obj._foto)
+
         return render_template("patient_foto.html", butshow=butshow, butedit=butedit,
                         cname=cname, obj=obj,att=cl.att,header=cl.header,des=cl.des,
                         ulogin=session.get("user"),auto_number=cl.auto_number,

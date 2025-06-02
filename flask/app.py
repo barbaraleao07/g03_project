@@ -56,6 +56,14 @@ def gform(cname):
 def subform(cname):
     return apps_subform(cname)
 
+@app.route("/patient", methods=["post", "get"])
+def patient():
+    return apps_patient(app)
+
+@app.route("/patient_foto", methods=["post", "get"])
+def patient_foto():
+    return patientfsub.patientFotoform(app, 'Patient')
+
 @app.route("/plot", methods=["post", "get"])
 def plot():
     return apps_plot()

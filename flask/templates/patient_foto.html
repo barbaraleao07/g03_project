@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css')}}">
+{% endblock %}
+
+{% block content %}
+    <div class="dados">
+        <img src="{{ img }}" alt="Foto do Paciente" width="200" height="200">
+        <h1>{{ header }}</h1>
+        <br>
+        <button id="edit" type="button" {{ butshow }} onclick="window.location.href = '/patient_foto?option=edit'" class="button1">Edit</button>
+        <button id="delete" type="button" {{ butshow }} onclick="window.location.href = '/patient_foto?option=delete'" class="button1">Delete</button>
+        <button id="insert" type="button" {{ butshow }} onclick="window.location.href = '/patient_foto?option=insert'" class="button1">Insert</button>
+        <button id="save" type="submit" form="form" class="button1" {{ butedit }}>Save</button>
+        <button id="cancel" type="button" {{ butedit }} onclick="window.location.href = '/patient_foto?option=cancel'" class="button1">Cancel</button>
+        <button id="exit" type="button" {{ butshow }} onclick="window.location.href = '/patient_foto?option=exit'" class="button1">Exit</button>
+        <br><br>
+
+        <form id="form" action="/patient_foto?option=save" enctype="multipart/form-data" method="post">
+            <table>
+                <tr>
+                    <td>
+                        <label for="{{ att[0] }}">{{ des[0] }}:</label>
+                        {% if butedit == 'enabled' and auto_number == 1 %}
+                            <input type="text" disabled id="{{ att[0] }}" name="{{ att[0] }}" value="{{ obj[att[0]] }}" size="30">
+                        {% else %}
+                            <input type="text" {{ butedit }} id="{{ att[0] }}" name="{{ att[0] }}" value="{{ obj[att[0]] }}" size="30">
+                        {% endif %}
+                        <br><br>
+
+                        {% for i in range(1,5) %}
+                            <label for="{{ att[i] }}">{{ des[i] }}:</label>
+                            <input type="text" {{ butedit }} id="{{ att[i] }}" name="{{ att[i] }}" value="{{ obj[att[i]] }}" size="30">
+                            <br><br>
+                        {% endfor %}
+                    </td>
+                    <td>
+                        <label for="{{ att[5] }}">{{ des[5] }}: {{ obj[att[5]] }}</label><br>
+                        {% if img %}
+                            <img src="{{ img }}" width="200">
+                        {% else %}
+                            <h1>Sem foto</h1>
+                        {% endif %}
+                        <br>
+                        <input name="img" {{ butedit }} type="file"/>
+                    </td>
+                </tr>
+            </table>
+        </form>
+
+        <br>
+
+        <button id="first" type="button" {{ butshow }} onclick="window.location.href = '/patient_foto?option=first'" class="button1">First</button>
+        <button id="previous" type="button" {{ butshow }} onclick="window.location.href = '/patient_foto?option=previous'" class="button1">Previous</button>
+        <button id="next" type="button" {{ butshow }} onclick="window.location.href = '/patient_foto?option=next'" class="button1">Next</button>
+        <button id="last" type="button" {{ butshow }} onclick="window.location.href = '/patient_foto?option=last'" class="button1">Last</button>
+    </div>
+{% endblock %}
